@@ -1,4 +1,5 @@
-import React from 'react';
+import React, { useState } from 'react';
+import './PersonItem.css'
 
 const PersonItem = ({ person }) => {
   return (

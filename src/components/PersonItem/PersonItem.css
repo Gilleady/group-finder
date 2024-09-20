@@ -1,0 +1,14 @@
+.person-item {
+    display: flex;
+    align-items: center;
+    margin-bottom: 5px;
+}
+  
+.person-icon {
+    font-size: 1.2em;
+    margin-right: 5px;
+}
+  
+.person-name {
+    margin-right: 10px;
+}

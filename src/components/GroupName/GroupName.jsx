@@ -1,4 +1,5 @@
 import React from 'react';
+import './GroupName.css';
 
 const GroupName = ({ groupName }) => {
   return (

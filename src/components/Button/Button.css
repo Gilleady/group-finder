@@ -1,0 +1,13 @@
+.button {
+    background-color: #800080; /* Roxo */
+    color: white;
+    padding: 15px 30px;
+    border: none;
+    border-radius: 5px;
+    margin-top: 10px;
+    cursor: pointer;
+    display: block; /* Ocupa toda a largura do container */
+    width: fit-content; /* Ajusta a largura do botão */
+    margin-left: auto;
+    margin-right: auto; /* Centraliza o botão */
+}

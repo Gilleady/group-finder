@@ -1,0 +1,32 @@
+.create-group-form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 20px;
+    width: 80%;
+    max-width: 800px;
+  }
+  
+  .create-group-form input,
+  .create-group-form textarea {
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    width: 100%;
+    box-sizing: border-box; /* Inclui padding e border na largura total */
+  }
+  
+  .create-group-form textarea {
+    resize: vertical; /* Permite redimensionar a altura */
+  }
+  
+  .create-group-form button {
+    background-color: #800080; /* Roxo */
+    color: white;
+    padding: 15px 30px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 10px;
+  }

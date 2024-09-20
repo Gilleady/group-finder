@@ -1,5 +1,6 @@
-import React from 'react';
+import React, { useState } from 'react';
 import PersonItem from '../PersonItem/PersonItem';
+import './PeopleList.css';
 
 const PeopleList = ({ people }) => {
   return (
