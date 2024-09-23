@@ -1,0 +1,43 @@
+{
+    "grupos": [
+        {
+            "id":1,
+            "name": "Grupo 1",
+            "description": "",
+            "people": [
+                "Pessoa 1",
+                "Pessoa 2",
+                "Pessoa 3",
+                "Pessoa 4",
+                "Pessoa 5",
+                "Pessoa 6"
+            ]
+        },
+        {
+            "id":2,
+            "name": "Grupo 2",
+            "description": "",
+            "people": [
+                "Pessoa 1",
+                "Pessoa 2",
+                "Pessoa 3",
+                "Pessoa 4",
+                "Pessoa 5",
+                "Pessoa 6"
+            ]
+        },
+        {
+            "id":3,
+            "name": "Grupo 3",
+            "description": "",
+            "people": [
+                "Pessoa 1",
+                "Pessoa 2",
+                "Pessoa 3",
+                "Pessoa 4",
+                "Pessoa 5",
+                "Pessoa 6"
+            ]
+        }
+    ]
+}

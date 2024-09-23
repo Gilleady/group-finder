@@ -1,27 +1,49 @@
-import React, { useState } from "react"
+import React, { useEffect, useState } from "react"
 import GroupList from "../GroupList/GroupList";
 import Button from "../Button/Button";
 import './GroupForm.css'
 
 const GroupForm = () => {
-    const [groups, setGroups] = useState([
-        { name: 'Grupo 1', people: ['Pessoa 1', 'Pessoa 2', 'Pessoa 3', 'Pessoa 4', 'Pessoa 5', 'Pessoa 6'] },
-        { name: 'Grupo 2', people: ['Pessoa 1', 'Pessoa 2', 'Pessoa 3', 'Pessoa 4', 'Pessoa 5', 'Pessoa 6'] },
-        { name: 'Grupo 3', people: ['Pessoa 1', 'Pessoa 2', 'Pessoa 3', 'Pessoa 4', 'Pessoa 5', 'Pessoa 6'] },
-    ]);
+    const [groups, setGroups] = useState([]);
     const [name, setName] = useState('');
     const [description, setDescription] = useState('');
 
-    function createGroup() {
+    useEffect(
+        () => {
+            getGroups();
+        }, [])
+
+    const createGroup = async () => {
         const newGroup = {
             name,
             description,
             people: [],
         };
-        setGroups([...groups, newGroup]);
+
+        const response = await fetch('https://localhost:3005/grupos', {
+            method: 'POST',
+            headers: new Headers({'Content-type':'application/json'}),
+            body: JSON.stringify(newGroup)
+        })
+
+        const data = await response.json();
+        alert(`Grupo: ${data.name} cadastrado com sucesso`);
+
+        getGroups();
         setName("");
         setDescription("");
     }
+
+    const getGroups = async () => {
+        const response = await fetch('https://localhost:3005/grupos');
+
+        console.log(response);
+
+        const data = await response.json();
+        setGroups(data);
+    }
+
+    /* getGroups(); */
 
     return (
         <form className="create-group-form">
