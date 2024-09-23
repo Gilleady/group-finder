@@ -20,7 +20,7 @@ const GroupForm = () => {
             people: [],
         };
 
-        const response = await fetch('https://localhost:3005/grupos', {
+        const response = await fetch('http://localhost:3005/grupos', {
             method: 'POST',
             headers: new Headers({'Content-type':'application/json'}),
             body: JSON.stringify(newGroup)
@@ -35,7 +35,7 @@ const GroupForm = () => {
     }
 
     const getGroups = async () => {
-        const response = await fetch('https://localhost:3005/grupos');
+        const response = await fetch('http://localhost:3005/grupos');
 
         console.log(response);
 
@@ -46,18 +46,21 @@ const GroupForm = () => {
     /* getGroups(); */
 
     return (
-        <form className="create-group-form">
-            <input
+        <form className="create-group-form" onSubmit={createGroup}>
+            <input 
+                id="groupName"
+                required
                 value={name}
                 onChange={(e) => setName(e.target.value)}
                 placeholder="Group Name"
-            />
+                />
             <input
+                id="groupDescription"
                 value={description}
                 onChange={(e) => setDescription(e.target.value)}
                 placeholder="Group Description"
             />
-            <Button text="Criar Grupo" onClick={createGroup} />
+            <Button text="Criar Grupo" type='submit' onClick={() => false} />
             <GroupList groups={groups} />
         </form>
     )

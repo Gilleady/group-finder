@@ -7,16 +7,18 @@ import './GroupItem.css';
 const GroupItem = ({ group, ...props }) => {
   const [people, setPeople] = useState(group.people);
 
-  function addPerson() {
+  const addPerson = async () => {
     setPeople([...people, `Pessoa ${people.length + 1}`]);
     group.people = people;
+
+    /* @TODO: IMPLEMENTAR MÉTODO PUT PARA ADICIONAR PESSOAS A GRUPOS EXISTENTES */
   }
 
   return (
     <div className="group-item" key={props.key}>
       <GroupName groupName={group.name} />
       <PeopleList people={people ? people : []} />
-      <Button text="Adicionar pessoa" onClick={addPerson} />
+      <Button text="Adicionar pessoa" type='button' onClick={addPerson} />
     </div>
   );
 };

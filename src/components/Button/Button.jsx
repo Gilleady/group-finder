@@ -1,13 +1,10 @@
 import React from 'react';
 import './Button.css';
 
-const Button = ({ text, onClick, ...props }) => {
+const Button = ({ text, type, onClick, ...props }) => {
 
   return (
-    <button className="button" onClick={(event) => {
-        event.preventDefault();
-        onClick();
-      }}>
+    <button className="button" type={type} onClick={onClick}>
       {text}
     </button>
   );
